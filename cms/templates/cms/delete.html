@@ -1,0 +1,13 @@
+<body>
+    <h1>{{ title }}</h1>
+    <table>
+        <tr><th>ID</th><td>{{ obj.id }}</td></tr>
+        <tr><th>名前</th><td>{{ obj.name }}</td></tr>
+        <tr><th>出版社</th><td>{{ obj.publisher}}</td></tr>
+        <tr><th>ページ数</th><td>{{ obj.page}}</td></tr>
+        <form action="{% url 'cms:delete' id %}" method="post">
+        {% csrf_token %}
+        <tr><th></th><td><input type="submit" value="削除"></td></tr>
+        </form>
+    </table>
+</body>
